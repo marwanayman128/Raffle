@@ -21,8 +21,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
+import { useTranslation } from 'react-i18next';
 
-const options = ["AR", "EN"];
+const options = ["ar", "en"];
 
 const Header1 = () => {
   const colorMode = useContext(ColorModeContext);
@@ -30,6 +31,9 @@ const Header1 = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(1);
   const open = Boolean(anchorEl);
+
+  const { i18n } = useTranslation();
+
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -37,16 +41,17 @@ const Header1 = () => {
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
     setAnchorEl(null);
+    const selectedLanguage = options[index];
+  i18n.changeLanguage(selectedLanguage);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   return (
     <Box
       sx={{
-        bgcolor: "#2B3445",
+        bgcolor: "#1976D2",
         py: "4px",
         borderBottomRightRadius: 4,
         borderBottomLeftRadius: 4,
@@ -130,7 +135,7 @@ const Header1 = () => {
                 sx={{
                   ".MuiTypography-root": { fontSize: "11px", color: "#fff" },
                 }}
-                secondary={options[selectedIndex]}
+                secondary={options[selectedIndex].toUpperCase()}
               />
               <ExpandMore sx={{ fontSize: "16px", color: "#fff" }} />
             </ListItem>
@@ -151,9 +156,9 @@ const Header1 = () => {
                 sx={{ fontSize: "11px", p: "3px 10px", minHeight: "10px" }}
                 key={option}
                 selected={index === selectedIndex}
-                onClick={(event) => handleMenuItemClick(event, index)}
+                onClick={() => handleMenuItemClick(event, index)}
               >
-                {option}
+                {option.toUpperCase()}
               </MenuItem>
             ))}
           </Menu>

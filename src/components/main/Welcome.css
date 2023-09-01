@@ -1,0 +1,47 @@
+.layer1 {
+    animation: moveUpDown 2.5s ease-in-out infinite alternate;
+}
+
+.layer2 {
+    animation: moveUp 4s ease-in-out infinite alternate;
+}
+
+.layer3 {
+    animation: moveWay 3s ease-in-out infinite alternate;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes moveWay {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}

@@ -8,6 +8,9 @@ import Main from "./components/main/mainn";
 import Footer from "./components/footer/footer";
 import ScrollToTop from "./components/scroll/ScrollToTop";
 import { Routes, Route } from "react-router-dom";
+// @ts-ignore
+import Welcome from "./components/main/welcome";
+import Catagory from "./components/main/Catagory";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -32,9 +35,13 @@ function App() {
               theme.palette.bg.main
             }
           >
+            <Welcome />
             <Hero />
+            <Catagory />
             <Main />
-          </Box>}></Route>
+          </Box>}>
+
+          </Route>
 
         </Routes>
         <Footer />

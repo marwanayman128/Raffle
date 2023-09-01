@@ -69,6 +69,7 @@ const Header3 = () => {
         alignItems: "center",
         justifyContent: "space-between",
         mt: 5,
+        pb: 3,
       }}
     >
       <Box>

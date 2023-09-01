@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import { Close } from "@mui/icons-material";
-import { Container, Typography, Stack, IconButton, Dialog, Button, Chip } from "@mui/material";
+import { Container, Typography, Stack, IconButton, Dialog, Button, Chip, Divider } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import PropTypes from 'prop-types'; // Import PropTypes for props validation
@@ -90,17 +90,17 @@ const ProductCountdown = ({ product }) => {
 
     return (
         <Chip
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            width: "50%",
-            m: "auto",
-            mt: 1,
-          }}
-          label={countdown > 0 ? `${formatCooldownTime(countdown)}` : 'Finished'}
-          color={countdown > 0 ? "primary" : "success"}
+            sx={{
+                display: "flex",
+                alignItems: "center",
+                width: "60%",
+                m: "auto",
+                mt: 1,
+            }}
+            label={countdown > 0 ? `${formatCooldownTime(countdown)}` : 'The Winner is: user'}
+            color={countdown > 0 ? "primary" : "success"}
         />
-      );
+    );
 };
 
 // Props validation
@@ -117,7 +117,7 @@ const Main = () => {
 
 
     const [open, setOpen] = useState(false);
-    
+
     // Functions to handle opening and closing the dialog
     const handleClickOpen = () => {
         setOpen(true);
@@ -127,17 +127,9 @@ const Main = () => {
     };
 
     return (
-        <Container sx={{ py: 9 }}>
-            <Stack
-                direction={"row"}
-                alignItems={"center"}
-                justifyContent={"space-between"}
-                flexWrap={"wrap"}
-                gap={3}
-            >
-                {/* Rest of your JSX */}
-            </Stack>
+        <Container sx={{ pb: 9, pt: 5 }}>
 
+            <Divider><h1>All Items</h1></Divider>
             <Stack
                 direction={"row"}
                 flexWrap={"wrap"}
@@ -156,7 +148,7 @@ const Main = () => {
                                 sx={{
                                     minWidth: 300,
                                     maxWidth: 333,
-                                    mt: 6,
+                                    mt: 3,
                                     ":hover .MuiCardMedia-root ": {
                                         rotate: "1deg",
                                         scale: "1.1",
@@ -189,7 +181,7 @@ const Main = () => {
                                         {item.description}
                                     </Typography>
                                     <div>
-                                            <ProductCountdown key={item.id} product={item} />
+                                        <ProductCountdown key={item.id} product={item} />
                                     </div>
                                 </CardContent>
 

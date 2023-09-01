@@ -1,10 +1,12 @@
-import { Box, Divider, Stack, Typography } from "@mui/material";
+import { Box, Divider, Stack, Typography, useTheme } from "@mui/material";
 import './footer.css'
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 const Footer = () => {
+
+  const theme = useTheme();
   return (
     <>
       <Stack direction="row"
@@ -12,10 +14,11 @@ const Footer = () => {
         alignItems="center"
         spacing={10}
         width={"60%"}
+        height={"11rem"}
         m="auto" 
         position={"relative"}
         sx={{  pb: 5 }}>
-        <Box >
+        <Box  >
           <Typography sx={{ fontSize: "24px" }}>
             Find amazing deals on the go.
           </Typography>
@@ -24,7 +27,7 @@ const Footer = () => {
           </Typography>
 
         </Box>
-        <Stack position={"absolute"} sx={{ pl: 50, pb: 7}}>
+        <Stack  sx={{ pr: 17 }}>
           <img src="../../../public/images/banner-19.png" alt="" width={"200px"} />
         </Stack>
         <Stack >
@@ -40,7 +43,8 @@ const Footer = () => {
       </Stack>
       <Box
         sx={{
-          bgcolor: "#2B3445",
+          // @ts-ignore
+          bgcolor: theme.palette.footerColor.main,
           py: 1.3,
           borderTopLeftRadius: 8,
           borderTopRightRadius: 8,
