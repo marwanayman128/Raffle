@@ -1,0 +1,6 @@
+.link-no-underline {
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Use the parent color (usually black) */
+}

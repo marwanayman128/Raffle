@@ -28,7 +28,7 @@ const Footer = () => {
 
         </Box>
         <Stack  sx={{ pr: 17 }}>
-          <img src="../../../public/images/banner-19.png" alt="" width={"200px"} />
+          <img src="images/banner-19.png" alt="" width={"200px"} />
         </Stack>
         <Stack >
           <Box sx={{ py: 5 }}>

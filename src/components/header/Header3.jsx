@@ -44,48 +44,28 @@ const Header3 = () => {
   };
 
   const theme = useTheme();
-  const [state, setState] = useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
+  const [state, setState] = useState({top: false,left: false,bottom: false,right: false,});
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
+      event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
     }
-
     setState({ ...state, [anchor]: open });
   };
 
   return (
     <Container
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        mt: 5,
-        pb: 3,
-      }}
+      sx={{display: "flex",alignItems: "center",justifyContent: "space-between",mt: 5,pb: 3,}}
     >
       <Box>
-        <Button
-          id="basic-button"
-          aria-controls={open ? "basic-menu" : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? "true" : undefined}
-          onClick={handleClick}
-          sx={{
-            width: 222,
-            // @ts-ignore
-            bgcolor: theme.palette.myColor.main,
-
-            color: theme.palette.text.secondary,
-          }}
+        <Button id="basic-button" aria-controls={open ? "basic-menu" : undefined} aria-haspopup="true" aria-expanded={open ? "true" : undefined} onClick={handleClick} sx={{
+          width: 222,
+          // @ts-ignore
+          bgcolor: theme.palette.myColor.main,
+          color: theme.palette.text.secondary,
+        }}
         >
           <WindowIcon />
           <Typography
@@ -153,12 +133,14 @@ const Header3 = () => {
 
       {useMediaQuery("(min-width:1200px)") && (
         <Stack gap={4} direction={"row"} alignItems={"center"}>
-          <Links title={"Home"} />
-          <Links title={"Menu"} />
-          <Links title={"Pages"} />
-          <Links title={"User Account"} />
-          <Links title={"Vendor Account"} />
-        </Stack>
+        <Links title={"Home"} subMenuItems={[]} />
+        <Links title={"About"} subMenuItems={["Products", "Add Product", "Edit Product"]} />
+        <Links title={"Pages"} subMenuItems={["Page 1", "Page 2"]} />
+        <Links title={"Vendor"} subMenuItems={["Inventory", "Page 2"]} />
+        <Links title={"Admin"} subMenuItems={["Dashboard", "Panel"]} />
+
+        {/* Add more links with their respective sub-menu items */}
+      </Stack>
       )}
 
       {useMediaQuery("(max-width:1200px)") && (
@@ -167,27 +149,22 @@ const Header3 = () => {
         </IconButton>
       )}
 
-      <Drawer
-        anchor={"top"}
-        open={state["top"]}
-        onClose={toggleDrawer("top", false)}
-        sx={{".MuiPaper-root.css-1sozasi-MuiPaper-root-MuiDrawer-paper": {height: "100%",}}}
-      >
-        <Box sx={{ width: 444, mx: "auto", mt: 6, position: "relative", pt: 10 }}>
+      <Drawer anchor={"top"} open={state["top"]} onClose={toggleDrawer("top", false)} sx={{ ".MuiPaper-root.css-1sozasi-MuiPaper-root-MuiDrawer-paper": { height: "100%", } }}>
+        <Box sx={{ width: "80%", mx: "auto", mt: 6, position: "relative", pt: 10 }}>
           <IconButton
-            sx={{":hover": { color: "red", rotate: "180deg", transition: "0.3s" }, position: "absolute",top: 0,right: 10,}}
+            sx={{ ":hover": { color: "red", rotate: "180deg", transition: "0.3s" }, position: "absolute", top: 0, right: 10, }}
             onClick={toggleDrawer("top", false)}
           >
             <Close />
           </IconButton>
 
           {[
-            {mainLink: "Home", subLinks: ["Link 1", "Link 2", "Link 3"] },
-            {mainLink: "Mega menu", subLinks: ["Link 1", "Link 2", "Link 3"] },
-            {mainLink: "full screen menu",subLinks: ["Link 1", "Link 2", "Link 3"],},
-            {mainLink: "pages", subLinks: ["Link 1", "Link 2", "Link 3"] },
-            {mainLink: "user account",subLinks: ["Link 1", "Link 2", "Link 3"],},
-            {mainLink: "vendor account",subLinks: ["Link 1", "Link 2", "Link 3"],},
+            { mainLink: "Home", subLinks: ["Link 1", "Link 2", "Link 3"] },
+            { mainLink: "Mega", subLinks: ["Link 1", "Link 2", "Link 3"] },
+            { mainLink: "full screen menu", subLinks: ["Link 1", "Link 2", "Link 3"], },
+            { mainLink: "pages", subLinks: ["Link 1", "Link 2", "Link 3"] },
+            { mainLink: "user account", subLinks: ["Link 1", "Link 2", "Link 3"], },
+            { mainLink: "vendor account", subLinks: ["Link 1", "Link 2", "Link 3"], },
           ].map((item) => {
             return (
               <Accordion

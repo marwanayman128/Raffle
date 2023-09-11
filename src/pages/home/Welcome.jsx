@@ -1,13 +1,13 @@
 import { Box, Stack, Typography } from '@mui/material';
-import './Welcome.css';
-import WelcomeButton from '../buttons/WelcomeButton/WelcomeButton';
+import './css/Welcome.css';
+import WelcomeButton from '../../components/buttons/WelcomeButton/WelcomeButton';
 import { useTranslation } from 'react-i18next';
 
 
 export default function Welcome() {
-    const { t , i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
     const textAlignment = i18n.language === 'ar' ? 'right' : 'left';
-
+    
     return (
         <>
 
@@ -17,11 +17,12 @@ export default function Welcome() {
                     welcomePage.main,
             }}>
                 <img src=".//images/Welcome/Background.png" alt="" width={"100%"} height={"100%"} />
-                <Stack position={"absolute"} sx={{ top: '25%', left: '5%', width: '40%',pl: 10 }}>
+                <Stack position={"absolute"} sx={{ top: '25%', left: '5%', width: '40%', pl: 10 }}>
                     <Typography sx={{ fontSize: "54px", textAlign: textAlignment }}>
                         {t("header.head")}
+                        
                     </Typography>
-                    <Typography sx={{ fontSize: "20px", textAlign: textAlignment  }}>
+                    <Typography sx={{ fontSize: "20px", textAlign: textAlignment }}>
                         {t("description.describe")}
                     </Typography>
                     <WelcomeButton />

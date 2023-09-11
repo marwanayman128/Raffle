@@ -1,0 +1,97 @@
+{
+    "Cars": [{
+            "id": 1,
+            "productImg": "https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "productTitle": "Product 1",
+            "productPrice": 20,
+            "productRating": 4.5,
+            "description": "Description for Product 1",
+            "time": 33
+        },
+        {
+            "id": 2,
+            "productImg": "https://images.pexels.com/photos/1213294/pexels-photo-1213294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "productTitle": "Product 2",
+            "productPrice": 30,
+            "productRating": 3.8,
+            "description": "Description for Product 2",
+            "time": 5000
+        },
+        {
+            "id": 3,
+            "productImg": "https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "productTitle": "Product 3",
+            "productPrice": 30,
+            "productRating": 3.8,
+            "description": "Description for Product 3",
+            "time": 9000
+        },
+        {
+            "id": 4,
+            "productImg": "https://images.pexels.com/photos/1687147/pexels-photo-1687147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "productTitle": "Product 4",
+            "productPrice": 30,
+            "productRating": 3.8,
+            "description": "Description for Product 3",
+            "time": 9000
+        }
+    ],
+    "Motorcycles": [{
+            "id": 10,
+            "productImg": "https://images.pexels.com/photos/2549941/pexels-photo-2549941.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            "productTitle": "Product 10",
+            "productPrice": 30,
+            "productRating": 3.8,
+            "description": "Description for Product 10",
+            "time": 9000
+        },
+        {
+            "id": 11,
+            "productImg": "https://images.pexels.com/photos/1715185/pexels-photo-1715185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "productTitle": "Product 11",
+            "productPrice": 30,
+            "productRating": 3.8,
+            "description": "Description for Product 11",
+            "time": 13000
+        },
+        {
+            "id": 12,
+            "productImg": "https://images.pexels.com/photos/2885326/pexels-photo-2885326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "productTitle": "Product 12",
+            "productPrice": 30,
+            "productRating": 3.8,
+            "description": "Description for Product 12",
+            "time": 23000
+        },
+        {
+            "id": 14,
+            "productImg": "https://images.pexels.com/photos/4577442/pexels-photo-4577442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "productTitle": "Product 7",
+            "productPrice": 30,
+            "productRating": 3.8,
+            "description": "Description for Product 2",
+            "time": 43000
+        },
+        {
+            "id": 15,
+            "productImg": "https://via.placeholder.com/300x200",
+            "productTitle": "Product 8",
+            "productPrice": 30,
+            "productRating": 3.8,
+            "description": "Description for Product 2",
+            "time": 53000
+        },
+        {
+            "id": 16,
+            "productImg": "https://via.placeholder.com/300x200",
+            "productTitle": "Product 9",
+            "productPrice": 30,
+            "productRating": 3.8,
+            "description": "Description for Product 2",
+            "time": 63000
+        }
+
+
+    ]
+
+}

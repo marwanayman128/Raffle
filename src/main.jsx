@@ -10,6 +10,7 @@ import global_ar from './translation/ar/global.json'
 import i18next from 'i18next';
 import {  I18nextProvider, initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 i18next
 .use(LanguageDetector)
@@ -34,8 +35,7 @@ i18next
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    
-
+  
       <Provider store={store}>
         <BrowserRouter>
         <I18nextProvider i18n={i18next}>
@@ -46,3 +46,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
   </React.StrictMode>
 );
+serviceWorkerRegistration.register();

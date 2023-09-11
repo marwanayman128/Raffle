@@ -167,6 +167,10 @@ const Header1 = () => {
             sx={{
               fontSize: "16px",
               color: "#fff",
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              window.open("https://twitter.com", "_blank");
             }}
           />
           <FacebookIcon
@@ -174,12 +178,20 @@ const Header1 = () => {
               fontSize: "16px",
               mx: 1,
               color: "#fff",
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              window.open("https://www.facebook.com", "_blank");
             }}
           />
           <InstagramIcon
             sx={{
               fontSize: "16px",
               color: "#fff",
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              window.open("https://www.instagram.com", "_blank");
             }}
           />
         </Stack>

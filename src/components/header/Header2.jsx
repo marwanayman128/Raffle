@@ -26,6 +26,8 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import React from "react";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Link } from 'react-router-dom';
+import './Header2.css';
 const Search = styled("div")(({ theme }) => ({
   flexGrow: 0.4,
   position: "relative",
@@ -83,7 +85,7 @@ const Header2 = () => {
 
   const [isRotated, setIsRotated] = useState(false);
 
-  
+
   const [anchorE2, setAnchorE2] = React.useState(null);
   const openn = Boolean(anchorE2);
   const handleClick = (event) => {
@@ -96,7 +98,7 @@ const Header2 = () => {
     setIsRotated(false);
 
   };
-  
+
 
 
 
@@ -208,91 +210,98 @@ const Header2 = () => {
           </StyledBadge>
         </IconButton>
 
-        
-          <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-           
-            <Tooltip title="Account settings">
-              <IconButton
-                disableRipple
-                onClick={handleClick}
-                size="small"
-                sx={{ ml: 2 , display: 'flex', alignItems: 'center',justifyContent: 'center' }}
-                aria-controls={open ? 'account-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-              >
-                <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
-                <Typography sx={{ ml: 1 }}>User</Typography>
 
-                <KeyboardArrowDownIcon style={{
-        transition: 'transform 0.3s',
-        transform: isRotated ? 'rotate(180deg)' : 'rotate(0)',
-      }} />
+        <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
 
-              </IconButton>
-            </Tooltip>
-          </Box>
-          <Menu
-            anchorEl={anchorE2}
-            id="account-menu"
-            open={openn}
-            onClose={handleClosee}
-            onClick={handleClosee}
-            PaperProps={{
-              elevation: 0,
-              sx: {
-                overflow: 'visible',
-                filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                mt: 1.5,
-                '& .MuiAvatar-root': {
-                  width: 32,
-                  height: 32,
-                  ml: -0.5,
-                  mr: 1,
-                },
-                '&:before': {
-                  content: '""',
-                  display: 'block',
-                  position: 'absolute',
-                  top: 0,
-                  right: 14,
-                  width: 10,
-                  height: 10,
-                  bgcolor: 'background.paper',
-                  transform: 'translateY(-50%) rotate(45deg)',
-                  zIndex: 0,
-                },
+          <Tooltip title="Account settings">
+            <IconButton
+              disableRipple
+              onClick={handleClick}
+              size="small"
+              sx={{ ml: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              aria-controls={open ? 'account-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+            >
+              <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+              <Typography sx={{ ml: 1 }}>User</Typography>
+
+              <KeyboardArrowDownIcon style={{
+                transition: 'transform 0.3s',
+                transform: isRotated ? 'rotate(180deg)' : 'rotate(0)',
+              }} />
+
+            </IconButton>
+          </Tooltip>
+        </Box>
+        <Menu
+          anchorEl={anchorE2}
+          id="account-menu"
+          open={openn}
+          onClose={handleClosee}
+          onClick={handleClosee}
+          PaperProps={{
+            elevation: 0,
+            sx: {
+              overflow: 'visible',
+              filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+              mt: 1.5,
+              '& .MuiAvatar-root': {
+                width: 32,
+                height: 32,
+                ml: -0.5,
+                mr: 1,
               },
-            }}
-            transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-            anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-          >
-            <MenuItem onClick={handleClosee}>
+              '&:before': {
+                content: '""',
+                display: 'block',
+                position: 'absolute',
+                top: 0,
+                right: 14,
+                width: 10,
+                height: 10,
+                bgcolor: 'background.paper',
+                transform: 'translateY(-50%) rotate(45deg)',
+                zIndex: 0,
+              },
+            },
+          }}
+          transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+          anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        >
+          
+          <Link to="/profile" className="link-no-underline" >
+            <MenuItem onClick={handleClosee} >
               <Avatar /> Profile
             </MenuItem>
-            <MenuItem onClick={handleClosee}>
-              <Avatar /> My account
-            </MenuItem>
-            <Divider />
-            <MenuItem onClick={handleClosee}>
-              <ListItemIcon>
-                <PersonAdd fontSize="small" />
-              </ListItemIcon>
-              Add another account
-            </MenuItem>
-            <MenuItem onClick={handleClosee}>
-              <ListItemIcon>
-                <Settings fontSize="small" />
-              </ListItemIcon>
-              Settings
-            </MenuItem>
-            <MenuItem onClick={handleClosee}>
-              <ListItemIcon>
-                <Logout fontSize="small" />
-              </ListItemIcon>
-              Logout
-            </MenuItem>
-          </Menu>
+          </Link>
+
+          <Link to="/myaccount" className="link-no-underline" >
+          <MenuItem onClick={handleClosee}>
+            <Avatar /> My account
+          </MenuItem>
+          </Link>
+
+          <Divider />
+          <MenuItem onClick={handleClosee}>
+            <ListItemIcon>
+              <PersonAdd fontSize="small" />
+            </ListItemIcon>
+            Add another account
+          </MenuItem>
+          <MenuItem onClick={handleClosee}>
+            <ListItemIcon>
+              <Settings fontSize="small" />
+            </ListItemIcon>
+            Settings
+          </MenuItem>
+          <MenuItem onClick={handleClosee}>
+            <ListItemIcon>
+              <Logout fontSize="small" />
+            </ListItemIcon>
+            Logout
+          </MenuItem>
+        </Menu>
       </Stack>
     </Container>
   );

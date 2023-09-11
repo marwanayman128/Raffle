@@ -61,7 +61,7 @@ export const getDesignTokens = (mode) => ({
             },
             footerColor: {
                 // main: "#2B3445"
-                main: "#1D2021"
+                main: "#1976D2"
             }
         }),
     },
