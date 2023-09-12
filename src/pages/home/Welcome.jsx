@@ -2,6 +2,7 @@ import { Box, Stack, Typography } from '@mui/material';
 import './css/Welcome.css';
 import WelcomeButton from '../../components/buttons/WelcomeButton/WelcomeButton';
 import { useTranslation } from 'react-i18next';
+import ScrollFadeIn from '../../components/scroll/scrollAnimation/scrollAnimation';
 
 
 export default function Welcome() {
@@ -17,7 +18,9 @@ export default function Welcome() {
                     welcomePage.main,
             }}>
                 <img src=".//images/Welcome/Background.png" alt="" width={"100%"} height={"100%"} />
+                
                 <Stack position={"absolute"} sx={{ top: '25%', left: '5%', width: '40%', pl: 10 }}>
+                <ScrollFadeIn>
                     <Typography sx={{ fontSize: "54px", textAlign: textAlignment }}>
                         {t("header.head")}
                         
@@ -26,7 +29,9 @@ export default function Welcome() {
                         {t("description.describe")}
                     </Typography>
                     <WelcomeButton />
+                    </ScrollFadeIn>
                 </Stack>
+                
                 <Box sx={{ position: "absolute", top: '3%', right: '31%', width: '9%' }}>
                     <img className='layer1' src=".//images/Welcome/Layer 1.png" alt="" width={"100%"} height={"100%"} />
                 </Box>

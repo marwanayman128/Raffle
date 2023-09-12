@@ -3,10 +3,10 @@ import Header1 from "./components/header/Header1";
 import Header3 from "./components/header/Header3";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
-import Hero from "./components/hero/Hero";
+import Hero from "./pages/home/hero/Hero";
 import Main from "./pages/home/main";
 import Footer from "./components/footer/footer";
-import ScrollToTop from "./components/scroll/ScrollToTop";
+import ScrollToTop from "./components/scroll/scrollToTop/ScrollToTop";
 import { Routes, Route } from "react-router-dom";
 // @ts-ignore
 import Welcome from "./pages/home/welcome";

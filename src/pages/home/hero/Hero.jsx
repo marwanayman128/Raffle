@@ -17,6 +17,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./slider.css";
 import IconSection from "./IconSection";
+import ScrollFadeIn from "../../../components/scroll/scrollAnimation/scrollAnimation";
 
 const mySlider = [
   { text: "HOTEL", title:"Win an",highlight:"Accommodation" , description: "Get accommodation in the most beautiful places", head: "Accommodation Collection", link: "./images/banner-15.jpg" },
@@ -58,6 +59,7 @@ const Hero = () => {
                     },
                   }}
                 >
+                  <ScrollFadeIn>
                   <Typography
                     sx={{
                       color: "#222",
@@ -121,6 +123,7 @@ const Hero = () => {
                   >
                     Get a Chance
                   </Button>
+                  </ScrollFadeIn>
                 </Box>
               </SwiperSlide>
             );
@@ -139,6 +142,7 @@ const Hero = () => {
                 left: 31,
               }}
             >
+              <ScrollFadeIn>
               <Typography
                 variant="caption"
                 sx={{
@@ -178,6 +182,7 @@ const Hero = () => {
                 Win now
                 <ArrowForwardIcon sx={{ fontSize: "13px" }} />
               </Link>
+              </ScrollFadeIn>
             </Stack>
           </Box>
 
@@ -191,6 +196,7 @@ const Hero = () => {
                 left: 31,
               }}
             >
+              <ScrollFadeIn>
               <Typography
                 variant="caption"
                 sx={{
@@ -201,6 +207,7 @@ const Hero = () => {
               >
                 Mobiles & Tablets
               </Typography>
+              
               <Typography
                 variant="h6"
                 sx={{
@@ -211,7 +218,6 @@ const Hero = () => {
               >
                 Phones
               </Typography>
-
            
 
               <Link
@@ -232,6 +238,8 @@ const Hero = () => {
                 Win now
                 <ArrowForwardIcon sx={{ fontSize: "13px" }} />
               </Link>
+              </ScrollFadeIn>
+
             </Stack>
           </Box>
         </Box>

@@ -162,7 +162,7 @@ const Main = () => {
            
             {Loadmore <= allProducts.length &&  
             <Box sx={{width: "100%" , display: "flex", justifyContent: "center",p: 7}}>
-                <Button size="large" onClick={() => setLoadmore(Loadmore + 3)}>Loadmore...</Button>
+                <Button size="large" onClick={() => setLoadmore(Loadmore + 3)}>Load more...</Button>
             </Box>}
            
             <Dialog
