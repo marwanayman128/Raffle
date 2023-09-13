@@ -3,12 +3,15 @@ import {
   Avatar,
   Badge,
   Box,
+  Button,
   Container,
   Divider,
   IconButton,
   InputBase,
   ListItemIcon,
+  Paper,
   Stack,
+  SwipeableDrawer,
   Tooltip,
   Typography,
   useTheme,
@@ -28,6 +31,8 @@ import React from "react";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link } from 'react-router-dom';
 import './Header2.css';
+
+
 const Search = styled("div")(({ theme }) => ({
   flexGrow: 0.4,
   position: "relative",
@@ -36,12 +41,10 @@ const Search = styled("div")(({ theme }) => ({
   "&:hover": {
     border: "1px solid #333",
   },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "266px",
+  width: "66px",
   [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(3),
-    width: "330px",
+    width: "230px",
   },
 }));
 
@@ -59,8 +62,6 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -108,30 +109,85 @@ const Header2 = () => {
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
     setAnchorEl(null);
   };
-
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   const theme = useTheme();
 
+
+  const [isSearchOpen, setSearchOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+
+  const toggleSearch = () => {
+    setSearchOpen(!isSearchOpen);
+    setSearchValue(''); // Clear the search input when opening/closing
+  };
+
+  const handleSearchInputChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
+ 
+  
   return (
-    <Container sx={{ my: 3, display: "flex", justifyContent: "space-between" }}>
+    <Container sx={{ my: 3, display: "flex", justifyContent: "space-between"}}>
+      <Stack direction={"row"} spacing={1}>
       <Stack alignItems={"center"}>
         <EmojiEventsOutlinedIcon />
         <Typography variant="body2">Raffle</Typography>
       </Stack>
 
+
+      <Stack display={{ xs: "flex", sm: "flex", md: "none",lg: "none", xl: "none" }}>
+      <IconButton size="small" onClick={toggleSearch}>
+        <SearchIcon />
+      </IconButton>
+      <SwipeableDrawer
+        anchor="bottom"
+        open={isSearchOpen}
+        onClose={toggleSearch}
+        onOpen={() => {}}
+        PaperProps={{
+          style: {
+            height: '100%', // Set the height to 100%
+          },
+        }}
+      >
+        <Paper
+          component="form"
+          elevation={3}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            padding: '8px',
+          }}
+        >
+          <InputBase
+            placeholder="What are you looking for?"
+            fullWidth
+            value={searchValue}
+            onChange={handleSearchInputChange}
+          />
+          <Button variant="text" color="error" onClick={toggleSearch}>
+            Cancel
+          </Button>
+          
+        </Paper>
+      </SwipeableDrawer>
+      </Stack>
+      </Stack>
+
+
       <Search
         sx={{
-          display: "flex",
+          display: { xs: "none", sm: "none", md: "flex" },
           borderRadius: "22px",
           justifyContent: "space-between",
+          
         }}
       >
         <SearchIconWrapper>
@@ -165,7 +221,7 @@ const Header2 = () => {
               <ListItemText
                 // className="border"
                 sx={{
-                  width: 93,
+                  width: "auto",
                   textAlign: "center",
                   "&:hover": { cursor: "pointer" },
                 }}
@@ -269,7 +325,7 @@ const Header2 = () => {
           transformOrigin={{ horizontal: 'right', vertical: 'top' }}
           anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
-          
+
           <Link to="/profile" className="link-no-underline" >
             <MenuItem onClick={handleClosee} >
               <Avatar /> Profile
@@ -277,9 +333,9 @@ const Header2 = () => {
           </Link>
 
           <Link to="/myaccount" className="link-no-underline" >
-          <MenuItem onClick={handleClosee}>
-            <Avatar /> My account
-          </MenuItem>
+            <MenuItem onClick={handleClosee}>
+              <Avatar /> My account
+            </MenuItem>
           </Link>
 
           <Divider />

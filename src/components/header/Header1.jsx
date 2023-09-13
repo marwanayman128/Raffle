@@ -22,7 +22,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { useTranslation } from 'react-i18next';
-
+import SmartphoneIcon from '@mui/icons-material/Smartphone';
 const options = ["ar", "en"];
 
 const Header1 = () => {
@@ -42,7 +42,7 @@ const Header1 = () => {
     setSelectedIndex(index);
     setAnchorEl(null);
     const selectedLanguage = options[index];
-  i18n.changeLanguage(selectedLanguage);
+    i18n.changeLanguage(selectedLanguage);
   };
 
   const handleClose = () => {
@@ -53,36 +53,43 @@ const Header1 = () => {
       sx={{
         bgcolor: "#1976D2",
         py: "4px",
-        borderBottomRightRadius: 4,
-        borderBottomLeftRadius: 4,
+        
       }}
     >
       <Container>
-        <Stack direction={"row"} alignItems={"center"}>
-          <Typography
-            sx={{
-              mr: 2,
-              p: "4px 10px",
-              bgcolor: "#D23F57",
-              borderRadius: "12px",
-              fontSize: "12px",
-              fontWeight: "bold",
-              color: "#fff",
-            }}
-            variant="body2"
-          >
-            Demo
-          </Typography>
+        <Stack direction={"row"} alignItems={"center"} >
+          <Stack sx={{ mr: 20 }} display={{ xs: "none", sm: "none", md: "flex" }} direction={"row"} alignItems={"center"} >
+            <Typography
+              sx={{
+                mr: 2,
+                p: "4px 10px",
+                bgcolor: "#D23F57",
+                borderRadius: "12px",
+                fontSize: "12px",
+                fontWeight: "bold",
+                color: "#fff",
+              }}
+              variant="body2"
+            >
+              Demo
+            </Typography>
 
-          <Typography
-            sx={{
-              fontSize: "12px",
-              fontWeight: 300,
-              color: "#fff",
-            }}
-            variant="body2"
-          >
-            Free Express Shipping
+            <Typography
+              sx={{
+                fontSize: "12px",
+                fontWeight: 300,
+                color: "#fff",
+              }}
+              variant="body2"
+            >
+              Free Express Shipping
+            </Typography>
+          </Stack>
+
+          <Typography sx={{ display: "flex", alignItems: "center", gap: 1, color: "#fff" }}>
+            <SmartphoneIcon sx={{ fontSize: 20, color: "#fff", ml: 3 }} />
+            <Typography sx={{ fontSize: 14 }}>Call Us(+02)</Typography>
+            <Typography sx={{ fontSize: 14 }}>01122990209</Typography>
           </Typography>
 
           <Box flexGrow={1} />
@@ -100,6 +107,9 @@ const Header1 = () => {
                 color="inherit"
               >
                 <LightModeOutlined sx={{ fontSize: "16px", color: "#fff" }} />
+                <Typography style={{ fontSize: "14px", color: "#fff" }}>
+                  Light
+                </Typography>
               </IconButton>
             ) : (
               <IconButton
@@ -113,6 +123,9 @@ const Header1 = () => {
                 color="inherit"
               >
                 <DarkModeOutlined sx={{ fontSize: "16px" }} />
+                <Typography style={{ fontSize: "14px", color: "#fff" }}>
+                  Dark
+                </Typography>
               </IconButton>
             )}
           </div>
@@ -120,7 +133,7 @@ const Header1 = () => {
           <List
             component="nav"
             aria-label="Device settings"
-            sx={{ p: 0, m: 0 }}
+            sx={{ p: 0, m: 0, ml: 2 }}
           >
             <ListItem
               id="lock-button"
@@ -168,6 +181,7 @@ const Header1 = () => {
               fontSize: "16px",
               color: "#fff",
               cursor: "pointer",
+              ml: 2,
             }}
             onClick={() => {
               window.open("https://twitter.com", "_blank");

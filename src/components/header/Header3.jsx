@@ -59,7 +59,7 @@ const Header3 = () => {
     <Container
       sx={{display: "flex",alignItems: "center",justifyContent: "space-between",mt: 5,pb: 3,}}
     >
-      <Box>
+      <Stack display={{ xs: "flex", sm: "flex" , md: "none"}}>
         <Button id="basic-button" aria-controls={open ? "basic-menu" : undefined} aria-haspopup="true" aria-expanded={open ? "true" : undefined} onClick={handleClick} sx={{
           width: 222,
           // @ts-ignore
@@ -129,21 +129,27 @@ const Header3 = () => {
             <ListItemText>Games</ListItemText>
           </MenuItem>
         </Menu>
-      </Box>
-
-      {useMediaQuery("(min-width:1200px)") && (
-        <Stack gap={4} direction={"row"} alignItems={"center"}>
-        <Links title={"Home"} subMenuItems={[]} />
-        <Links title={"About"} subMenuItems={["Products", "Add Product", "Edit Product"]} />
-        <Links title={"Pages"} subMenuItems={["Page 1", "Page 2"]} />
-        <Links title={"Vendor"} subMenuItems={["Inventory", "Page 2"]} />
-        <Links title={"Admin"} subMenuItems={["Dashboard", "Panel"]} />
-
-        {/* Add more links with their respective sub-menu items */}
       </Stack>
+
+      {useMediaQuery("(min-width:900px)") && (
+        <Container>
+        <Stack gap={4} direction={"row"} alignItems={"center"} justifyContent={"center"}>
+        <Links title={"Home"} subMenuItems={[]} />
+        <Links title={"About"} subMenuItems={[]} />
+        <Links title={"Pages"} subMenuItems={["Page 1", "Page 2"]} />
+        <Links title={"Vendor"} subMenuItems={[]} />
+        <Links title={"Admin"} subMenuItems={[]} />
+        <Links title={"Blog"} subMenuItems={[]} />
+        <Links title={"DAILY DEALS"} subMenuItems={[]} />
+        <Links title={"ramez"} subMenuItems={[]} />
+        <Links title={"mahmoud"} subMenuItems={[]} />
+        <Links title={"mahmoud"} subMenuItems={[]} />
+        <Links title={"mahmoud"} subMenuItems={[]} />
+      </Stack>
+      </Container>
       )}
 
-      {useMediaQuery("(max-width:1200px)") && (
+      {useMediaQuery("(max-width:900px)") && (
         <IconButton onClick={toggleDrawer("top", true)}>
           <MenuIcon />
         </IconButton>
@@ -159,7 +165,7 @@ const Header3 = () => {
           </IconButton>
 
           {[
-            { mainLink: "Home", subLinks: ["Link 1", "Link 2", "Link 3"] },
+            { mainLink: "Home", subLinks: ["Link 1", "Link 2"] },
             { mainLink: "Mega", subLinks: ["Link 1", "Link 2", "Link 3"] },
             { mainLink: "full screen menu", subLinks: ["Link 1", "Link 2", "Link 3"], },
             { mainLink: "pages", subLinks: ["Link 1", "Link 2", "Link 3"] },

@@ -12,26 +12,27 @@ export default function Welcome() {
     return (
         <>
 
-            <Box sx={{
+            <Stack mb={{ xs: 5, sm: 5, md: 5, lg: 5, xl: 5 }} sx={{
+
                 position: "relative", backgroundImage: theme => theme.palette.
                     // @ts-ignore
                     welcomePage.main,
             }}>
                 <img src=".//images/Welcome/Background.png" alt="" width={"100%"} height={"100%"} />
                 
-                <Stack position={"absolute"} sx={{ top: '25%', left: '5%', width: '40%', pl: 10 }}>
+                <Stack position={"absolute"} top={{ xs: "5%", sm: "5%", md: "15%", lg: "15%", xl: "25%"}} sx={{ left: '5%', width: '40%' }}>
                 <ScrollFadeIn>
-                    <Typography sx={{ fontSize: "54px", textAlign: textAlignment }}>
+                    <Typography fontSize={{ xs: "22px", sm: "26px", md: "40px", lg: "70px", xl: "80px"}} sx={{  textAlign: textAlignment }}>
                         {t("header.head")}
                         
                     </Typography>
-                    <Typography sx={{ fontSize: "20px", textAlign: textAlignment }}>
+                    <Typography fontSize={{ xs: "10px", sm: "13px", md: "15px", lg: "20px", xl: "20px"}} sx={{  textAlign: textAlignment }}>
                         {t("description.describe")}
                     </Typography>
                     <WelcomeButton />
                     </ScrollFadeIn>
+
                 </Stack>
-                
                 <Box sx={{ position: "absolute", top: '3%', right: '31%', width: '9%' }}>
                     <img className='layer1' src=".//images/Welcome/Layer 1.png" alt="" width={"100%"} height={"100%"} />
                 </Box>
@@ -42,7 +43,7 @@ export default function Welcome() {
                 <Box sx={{ position: "absolute", top: '6%', right: '7%', width: '7%', rotate: "16deg" }}>
                     <img className='layer3' src=".//images/Welcome/Layer 3.png" alt="" width={"100%"} height={"100%"} />
                 </Box>
-            </Box>
+            </Stack>
         </>
     )
 }
