@@ -20,9 +20,9 @@ import IconSection from "./IconSection";
 import ScrollFadeIn from "../../../components/scroll/scrollAnimation/scrollAnimationOnce";
 
 const mySlider = [
-  { text: "HOTEL", title:"Win an",highlight:"Accommodation" , description: "Get accommodation in the most beautiful places", head: "Accommodation Collection", link: "./images/banner-15.jpg" },
-  { text: "Electricals", title:"Win an",highlight:"Electrical" , description: "Get an electricals for your home", head: "Electronics & Appliances Collection", link: "./images/banner-25.jpg" },
-  { text: "Cars", title:"Win a",highlight:"Car" , description: "Get a new car for you", head: "Cars Collection", link: "./images/banner-18.jpg" },
+  { text: "HOTEL", title:"Win an",highlight:"Accommodation" , description: "Get accommodation in the most beautiful places", head: "Accommodation Collection", link: "./images/HeroSection/banner-15.jpg" },
+  { text: "Electricals", title:"Win an",highlight:"Electrical" , description: "Get an electricals for your home", head: "Electronics & Appliances Collection", link: "./images/HeroSection/banner-25.jpg" },
+  { text: "Cars", title:"Win a",highlight:"Car" , description: "Get a new car for you", head: "Cars Collection", link: "./images/HeroSection/banner-18.jpg" },
 
 ];
 
@@ -133,7 +133,7 @@ const Hero = () => {
 
         <Box sx={{ display: { xs: "none", md: "block", minWidth: "26.6%" } }}>
           <Box sx={{ position: "relative" }}>
-            <img width={"100%"} src=".//images/banner-17.jpg" alt="" />
+            <img width={"100%"} src="./images/HeroSection/banner-17.jpg" alt="" />
 
             <Stack
               sx={{
@@ -188,7 +188,7 @@ const Hero = () => {
           </Box>
 
           <Box sx={{ position: "relative" }}>
-            <img width={"100%"} src="./images/banner-16.jpg" alt="" />
+            <img width={"100%"} src="./images/HeroSection/banner-16.jpg" alt="" />
             <Stack
               sx={{
                 position: "absolute",

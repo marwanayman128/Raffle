@@ -5,7 +5,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ScrollFadeIn from "../scroll/scrollAnimation/scrollAnimationOnce";
-import MyLink from "../MyLink";
+import MyLink from "../Link/MyLink";
 import { styled } from '@mui/system';
 import SendIcon from '@mui/icons-material/Send';
 const ResponsiveImage = styled('img')(({ theme }) => ({
@@ -61,7 +61,7 @@ const Footer = () => {
               </Typography>
             </Box>
             <Stack pl={{ xs: 0, sm: 0, md: 10, lg: 10, xl: 20 }} >
-              <ResponsiveImage src={"images/banner-19.png"} alt="" />
+              <ResponsiveImage src={"images/PhoneDownloadBanner/banner-19.png"} alt="" />
             </Stack>
             <Stack >
               <Box sx={{ py: 5 }}>
@@ -164,7 +164,9 @@ const Footer = () => {
                 <div className="subscribe-form">
                   <form action="#">
                     <input type="text" placeholder="Email Address"></input>
-                    <button><SendIcon sx={{ color: "#fff" }} /></button>
+                    <button className="send-button">
+      <SendIcon sx={{ color: "#2E2E2E", transition: 'transform 0.3s' }} />
+    </button>
                   </form>
                 </div>
               </div>

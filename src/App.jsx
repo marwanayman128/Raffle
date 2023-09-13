@@ -13,6 +13,7 @@ import Welcome from "./pages/home/welcome";
 import Catagory from "./pages/home/CatagorySlider";
 import Profile from "./pages/profilePage/profile";
 import Myaccount from "./pages/myaccountPage/myaccount";
+import PaymentWays from "./pages/home/PaymentWays/PaymentWays";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -43,6 +44,7 @@ function App() {
             <Hero />
             <Catagory />
             <Main />
+            <PaymentWays />
           </Box>}>
           </Route>
 
