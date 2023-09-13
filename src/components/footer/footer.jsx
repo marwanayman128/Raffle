@@ -4,13 +4,13 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import ScrollFadeIn from "../scroll/scrollAnimation/scrollAnimation";
+import ScrollFadeIn from "../scroll/scrollAnimation/scrollAnimationOnce";
 import MyLink from "../MyLink";
 import { styled } from '@mui/system';
-
+import SendIcon from '@mui/icons-material/Send';
 const ResponsiveImage = styled('img')(({ theme }) => ({
-   // Default width for extra small screens
-   width: '40px', // Width for small screens and up
+  // Default width for extra small screens
+  width: '40px', // Width for small screens and up
   [theme.breakpoints.up('xs')]: {
     width: '150px', // Width for small screens and up
   },
@@ -29,52 +29,52 @@ const Footer = () => {
 
       <ScrollFadeIn>
         <Container>
-        <Stack direction={{ xs: "column", sm: "row" }}
-          justifyContent="space-between"
-          alignItems="center"
-          height={{ xs: "auto", sm: "11rem" }}
-          m="auto"
-          position={"relative"}
-          sx={{ pb: 5 }}>
+          <Stack direction={{ xs: "column", sm: "row" }}
+            justifyContent="space-between"
+            alignItems="center"
+            height={{ xs: "auto", sm: "11rem" }}
+            m="auto"
+            position={"relative"}
+            sx={{ pb: 5 }}>
 
-          <Box sx={{ width: "auto" }}>
-            <Typography
-              sx={{
-                fontSize: "20px",
-                '@media (max-width: 900px)': {
-                  fontSize: "18px",
-                },
-              }}
-            >
-              Find amazing deals on the go.
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "24px",
-                color: "#E00000",
-                '@media (max-width: 900px)': {
+            <Box sx={{ width: "auto" }}>
+              <Typography
+                sx={{
                   fontSize: "20px",
-                },
-              }}
-            >
-              Download the app now!
-            </Typography>
-          </Box>
-          <Stack pl={{ xs: 0, sm: 0, md: 10 , lg: 10, xl: 20}} >
-          <ResponsiveImage   src={"images/banner-19.png"} alt="" />
-          </Stack>
-          <Stack >
-            <Box sx={{ py: 5 }}>
-              <img src="https://assets.codepen.io/167732/App_Store_badge.svg" alt="" width={"150px"} />
+                  '@media (max-width: 900px)': {
+                    fontSize: "18px",
+                  },
+                }}
+              >
+                Find amazing deals on the go.
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "24px",
+                  color: "#E00000",
+                  '@media (max-width: 900px)': {
+                    fontSize: "20px",
+                  },
+                }}
+              >
+                Download the app now!
+              </Typography>
             </Box>
-            <Box>
+            <Stack pl={{ xs: 0, sm: 0, md: 10, lg: 10, xl: 20 }} >
+              <ResponsiveImage src={"images/banner-19.png"} alt="" />
+            </Stack>
+            <Stack >
+              <Box sx={{ py: 5 }}>
+                <img src="https://assets.codepen.io/167732/App_Store_badge.svg" alt="" width={"150px"} />
+              </Box>
+              <Box>
 
-              <img src="https://assets.codepen.io/167732/Google_Play_badge.svg" alt="" width={"150px"} />
-            </Box>
+                <img src="https://assets.codepen.io/167732/Google_Play_badge.svg" alt="" width={"150px"} />
+              </Box>
+
+            </Stack>
 
           </Stack>
-
-        </Stack>
         </Container>
       </ScrollFadeIn>
       <Box
@@ -87,7 +87,7 @@ const Footer = () => {
       >
         <Container>
 
-          <Grid container sx={{ color: "#FFFFFF",py: 5, display: "flex", justifyContent: "space-between" }} rowSpacing={{ xs: 5, sm: 5, md: 15 }} columnSpacing={{ xs: 10, sm: 20, md: 22 }}  >
+          <Grid container sx={{ color: "#FFFFFF", py: 5, display: "flex", justifyContent: "space-between" }} rowSpacing={{ xs: 5, sm: 5, md: 15 }} columnSpacing={{ xs: 10, sm: 20, md: 2 }}  >
             <Grid item xs={6} sm={6} md={3} columnSpacing={{ xs: 1, sm: 2, md: 9 }}>
               <Stack direction="column" gap={2}>
                 <Typography variant="h6" >
@@ -114,7 +114,7 @@ const Footer = () => {
             </Grid>
 
             <Grid item xs={6} sm={6} md={3} columnSpacing={{ xs: 1, sm: 2, md: 9 }}>
-              <Stack direction="column" gap={1}>
+              <Stack direction="column" gap={1} >
                 <Typography variant="h6" >
                   Follow Us
                 </Typography>
@@ -142,7 +142,7 @@ const Footer = () => {
               <Box sx={{ py: 2, textAlign: { xs: "center", sm: "left" } }}>
 
               </Box>
-              <Stack gap={1} direction="column" divider={<Divider orientation="horizontal" flexItem />}>
+              <Stack gap={1} direction="column" >
                 <Typography variant="h6" gutterBottom>
                   Languages
                 </Typography>
@@ -153,14 +153,21 @@ const Footer = () => {
 
 
             <Grid item xs={6} sm={6} md={3}>
-              <Stack direction="column" gap={1}>
 
-                <Typography variant="h6" gutterBottom>
-                  Languages
-                </Typography>
-                <MyLink href="#">English</MyLink>
-                <MyLink href="#">عربي</MyLink>
-              </Stack>
+              <div className="footer-widget">
+                <div className="footer-widget-heading">
+                  <h3>Subscribe</h3>
+                </div>
+                <div className="footer-text mb-25">
+                  <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                </div>
+                <div className="subscribe-form">
+                  <form action="#">
+                    <input type="text" placeholder="Email Address"></input>
+                    <button><SendIcon sx={{ color: "#fff" }} /></button>
+                  </form>
+                </div>
+              </div>
 
             </Grid>
           </Grid>
@@ -170,9 +177,9 @@ const Footer = () => {
 
 
           <Stack direction={{ xs: 'column-reverse', sm: 'column-reverse', md: 'column-reverse', lg: 'row' }} alignItems={{ xs: "center", sm: "center" }} justifyContent={"space-between"} margin={"auto"} spacing={4} >
-            <Stack direction={{ xs: 'row',  sm: 'row' }} gap={1} divider={<Divider orientation="vertical" flexItem />}  >
+            <Stack direction={{ xs: 'row', sm: 'row' }} gap={1} divider={<Divider orientation="vertical" flexItem />}  >
               <Typography
-                sx={{ fontSize: 14,  color: "#FFFFFF" }}
+                sx={{ fontSize: 14, color: "#FFFFFF" }}
               >
                 ©Designed by Marwan 2023.
               </Typography>

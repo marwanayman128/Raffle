@@ -1,6 +1,7 @@
 import {
   Box,
   Container,
+  Divider,
   Drawer,
   IconButton,
   ListItemIcon,
@@ -133,7 +134,7 @@ const Header3 = () => {
 
       {useMediaQuery("(min-width:900px)") && (
         <Container>
-        <Stack gap={4} direction={"row"} alignItems={"center"} justifyContent={"center"}>
+        <Stack gap={4} direction={"row"} alignItems={"center"} justifyContent={"center"} divider={<Divider orientation="vertical" flexItem />}>
         <Links title={"Home"} subMenuItems={[]} />
         <Links title={"About"} subMenuItems={[]} />
         <Links title={"Pages"} subMenuItems={["Page 1", "Page 2"]} />
@@ -141,10 +142,7 @@ const Header3 = () => {
         <Links title={"Admin"} subMenuItems={[]} />
         <Links title={"Blog"} subMenuItems={[]} />
         <Links title={"DAILY DEALS"} subMenuItems={[]} />
-        <Links title={"ramez"} subMenuItems={[]} />
-        <Links title={"mahmoud"} subMenuItems={[]} />
-        <Links title={"mahmoud"} subMenuItems={[]} />
-        <Links title={"mahmoud"} subMenuItems={[]} />
+        
       </Stack>
       </Container>
       )}

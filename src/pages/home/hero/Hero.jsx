@@ -17,7 +17,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./slider.css";
 import IconSection from "./IconSection";
-import ScrollFadeIn from "../../../components/scroll/scrollAnimation/scrollAnimation";
+import ScrollFadeIn from "../../../components/scroll/scrollAnimation/scrollAnimationOnce";
 
 const mySlider = [
   { text: "HOTEL", title:"Win an",highlight:"Accommodation" , description: "Get accommodation in the most beautiful places", head: "Accommodation Collection", link: "./images/banner-15.jpg" },

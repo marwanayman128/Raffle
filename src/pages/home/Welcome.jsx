@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from '@mui/material';
 import './css/Welcome.css';
 import WelcomeButton from '../../components/buttons/WelcomeButton/WelcomeButton';
 import { useTranslation } from 'react-i18next';
-import ScrollFadeIn from '../../components/scroll/scrollAnimation/scrollAnimation';
+import ScrollFadeIn from '../../components/scroll/scrollAnimation/scrollAnimationOnce';
 
 
 export default function Welcome() {

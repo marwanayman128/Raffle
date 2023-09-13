@@ -1,22 +1,22 @@
-// ScrollFadeIn.js
+/* eslint-disable react/prop-types */
 import  { useEffect, useRef, useState } from 'react';
 
 const ScrollFadeIn = ({ children }) => {
   const [visible, setVisible] = useState(false);
+  const [animationTriggered, setAnimationTriggered] = useState(false); // New state flag
   const ref = useRef(null);
 
   useEffect(() => {
     const options = {
-      root: null, // Use the viewport as the root
-      rootMargin: '0px', // No margin
-      threshold: 0.5, // When at least 50% of the element is visible
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
     };
 
     const handleIntersect = (entries) => {
-      if (entries[0].isIntersecting) {
+      if (entries[0].isIntersecting && !animationTriggered) {
         setVisible(true);
-      } else {
-        setVisible(false);
+        setAnimationTriggered(true); // Set the flag to prevent further animations
       }
     };
 
@@ -30,9 +30,13 @@ const ScrollFadeIn = ({ children }) => {
         observer.unobserve(ref.current);
       }
     };
-  }, []);
+  }, [animationTriggered]); // Add animationTriggered to the dependency array
 
-  return <div className={`fade-in ${visible ? 'fade-in-visible' : ''}`} ref={ref}>{children}</div>;
+  return (
+    <div className={`fade-in ${visible ? 'fade-in-visible' : ''}`} ref={ref}>
+      {children}
+    </div>
+  );
 };
 
 export default ScrollFadeIn;

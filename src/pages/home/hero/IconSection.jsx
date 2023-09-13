@@ -11,7 +11,7 @@ import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 import CreditScoreOutlinedIcon from "@mui/icons-material/CreditScoreOutlined";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import AccessAlarmOutlinedIcon from "@mui/icons-material/AccessAlarmOutlined";
-import ScrollFadeIn from "../../../components/scroll/scrollAnimation/scrollAnimation";
+import ScrollFadeIn from "../../../components/scroll/scrollAnimation/scrollAnimationOnce";
 
 const IconSection = () => {
   const theme = useTheme();
