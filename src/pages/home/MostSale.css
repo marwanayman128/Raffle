@@ -1,0 +1,12 @@
+.MostSale .splide__slide {
+    border: none !important;
+}
+
+.MostSale .splide__track--nav>.splide__list>.splide__slide.is-active {
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+.MostSaleParentSlider2 .splide {
+    top: 50%;
+    bottom: 50%;
+}

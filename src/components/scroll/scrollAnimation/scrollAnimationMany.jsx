@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
-// ScrollFadeIn.js
 import  { useEffect, useRef, useState } from 'react';
 
-const ScrollFadeIn = ({ children }) => {
+const ScrollFadeIn = ({ children, transitionDuration = 1 }) => {
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
 
@@ -33,7 +32,17 @@ const ScrollFadeIn = ({ children }) => {
     };
   }, []);
 
-  return <div className={`fade-in ${visible ? 'fade-in-visible' : ''}`} ref={ref}>{children}</div>;
+  const transitionStyle = {
+    transition: `opacity ${transitionDuration}s ease-in-out, transform ${transitionDuration}s ease-in-out`,
+    opacity: visible ? 1 : 0,
+    transform: `translateY(${visible ? 0 : '20px'})`,
+  };
+
+  return (
+    <div className={`fade-in`} ref={ref} style={transitionStyle}>
+      {children}
+    </div>
+  );
 };
 
 export default ScrollFadeIn;

@@ -14,6 +14,7 @@ import Catagory from "./pages/home/CatagorySlider";
 import Profile from "./pages/profilePage/profile";
 import Myaccount from "./pages/myaccountPage/myaccount";
 import PaymentWays from "./pages/home/PaymentWays/PaymentWays";
+import ThumbnailSlider from "./pages/home/MostSale";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -43,6 +44,7 @@ function App() {
             <Welcome />
             <Hero />
             <Catagory />
+            <ThumbnailSlider />
             <Main />
             <PaymentWays />
           </Box>}>

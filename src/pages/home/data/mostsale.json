@@ -1,0 +1,41 @@
+[{
+    "id": 1,
+    "itemImg": "https://c0.wallpaperflare.com/preview/228/1015/633/new-york-united-states-adventure-sun.jpg",
+    "itemName": "Photography",
+    "itemTitle": "Raw Cityscape",
+    "itemPrice": 20,
+    "itemRating": 4.5,
+    "description": "The only way to make sense out of change is to plunge into it, move with it, and join the dance."
+}, {
+    "id": 2,
+    "itemImg": "https://images.unsplash.com/photo-1551983914-4ab58d6b1018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2lkZSUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+    "itemName": "Exploration",
+    "itemTitle": "The Kingdom",
+    "itemPrice": 30,
+    "itemRating": 3.8,
+    "description": "Zen does not confuse spirituality with thinking about God while one is peeling potatoes. Zen spirituality is just to peel the potatoes. "
+}, {
+    "id": 3,
+    "itemImg": "https://c0.wallpaperflare.com/preview/228/1015/633/new-york-united-states-adventure-sun.jpg",
+    "itemName": "Miscellaneous",
+    "itemTitle": "Going in Deep",
+    "itemPrice": 30,
+    "itemRating": 3.8,
+    "description": "To have faith is to trust yourself to the water. When you swim you don't grab hold of the water, because if you do you will sink and drown. Instead you relax, and float. "
+}, {
+    "id": 4,
+    "itemImg": "https://images.pexels.com/photos/1687147/pexels-photo-1687147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "itemName": "Nightsky",
+    "itemTitle": "Galactic Oneness",
+    "itemPrice": 30,
+    "itemRating": 3.8,
+    "description": "Things are as they are. Looking out into it the universe at night, we make no comparisons between right and wrong stars, nor between well and badly arranged constellations. "
+}, {
+    "id": 5,
+    "itemImg": "https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "itemName": "Traveling",
+    "itemTitle": "Vast Deserts",
+    "itemPrice": 30,
+    "itemRating": 3.8,
+    "description": "To have faith is to trust yourself to the water. When you swim you don't grab hold of the water, because if you do you will sink and drown. Instead you relax, and float. "
+}]
