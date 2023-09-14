@@ -30,7 +30,7 @@ class YourComponent extends React.Component {
                 <Splide
                     className='MostSaleParentSlider1'
                     ref={this.mainSliderRef}
-                    options={{ heightRatio: 0.52, pagination: false, arrows: false, cover: true, gap: 10, }}>
+                    options={{ heightRatio: 0.55, pagination: false, arrows: false, cover: true, gap: 22, }}>
                     {mostSale.map((item) => (
                         <SplideSlide key={item.id} >
 
@@ -45,14 +45,13 @@ class YourComponent extends React.Component {
                                     <Typography sx={{ color: "#fff", fontSize: "15px", width: "60%" }}>{item.description}</Typography>
                                 </ScrollFadeIn>
                             </Box>
-                            
                             <Box component="div" sx={{background: "linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent)",position: "absolute", bottom: "0", width: "100%", height: "25%"}} />
 
                         </SplideSlide>
                     ))}
                 </Splide>
 
-                <Box sx={{ position: "absolute", top: '10%', left: '4%' }}>
+                <Box sx={{ position: "absolute", top: '9%', left: '4%' }}>
                     <Splide
                         className='MostSaleParentSlider'
                         ref={this.thumbnailSliderRef}
