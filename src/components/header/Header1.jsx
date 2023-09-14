@@ -107,9 +107,7 @@ const Header1 = () => {
                 color="inherit"
               >
                 <LightModeOutlined sx={{ fontSize: "16px", color: "#fff" }} />
-                <Typography style={{ fontSize: "14px", color: "#fff" }}>
-                  Light
-                </Typography>
+                
               </IconButton>
             ) : (
               <IconButton
@@ -123,9 +121,7 @@ const Header1 = () => {
                 color="inherit"
               >
                 <DarkModeOutlined sx={{ fontSize: "16px" }} />
-                <Typography style={{ fontSize: "14px", color: "#fff" }}>
-                  Dark
-                </Typography>
+               
               </IconButton>
             )}
           </div>
@@ -133,7 +129,7 @@ const Header1 = () => {
           <List
             component="nav"
             aria-label="Device settings"
-            sx={{ p: 0, m: 0, ml: 2 }}
+            sx={{ p: 0, m: 0 }}
           >
             <ListItem
               id="lock-button"

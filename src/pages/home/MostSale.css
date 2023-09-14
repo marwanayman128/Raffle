@@ -10,3 +10,21 @@
     top: 50%;
     bottom: 50%;
 }
+
+.MostSaleParentSlider .splide__arrow {
+    color: #fff;
+}
+
+.MostSaleParentSlider .splide__arrow--prev {
+    left: -12%;
+}
+
+.MostSaleParentSlider .splide__arrow--next {
+    right: -12%;
+}
+
+@media screen and (max-width: 600px) {
+    .MostSaleParentSlider {
+        display: none;
+    }
+}
