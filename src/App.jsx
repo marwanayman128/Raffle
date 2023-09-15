@@ -11,10 +11,11 @@ import { Routes, Route } from "react-router-dom";
 // @ts-ignore
 import Welcome from "./pages/home/welcome";
 import Catagory from "./pages/home/CatagorySlider";
-import Profile from "./pages/profilePage/profile";
-import Myaccount from "./pages/myaccountPage/myaccount";
+import Profile from "./pages/User/profilePage/profile";
+import Myaccount from "./pages/User/myaccountPage/myaccount";
 import PaymentWays from "./pages/home/PaymentWays/PaymentWays";
 import ThumbnailSlider from "./pages/home/MostSale";
+import Register from "./pages/User/Register/Register";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -67,6 +68,15 @@ function App() {
             }
           >
             <Myaccount />
+          </Box>}>
+          </Route>
+          <Route path="/register" element={<Box
+            bgcolor={
+              // @ts-ignore
+              theme.palette.bg.main
+            }
+          >
+            <Register />
           </Box>}>
           </Route>
 

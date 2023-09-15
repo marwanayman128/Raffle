@@ -1,0 +1,99 @@
+.RegisterForm form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+.RegisterForm a,.RegisterForm a:visited {
+    color: #fff;
+}
+
+.RegisterForm input[type="text"],
+.RegisterForm input[type="password"],
+.RegisterForm button,
+.RegisterForm textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.RegisterForm label,
+.RegisterForm button {
+  margin-top: 1rem;
+}
+
+.RegisterForm button {
+  padding: 0.5rem;
+}
+
+.RegisterForm .instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.RegisterForm .instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.RegisterForm .offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.RegisterForm .hide {
+    display: none;
+}
+
+.RegisterForm .valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.RegisterForm .invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.RegisterForm .errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.RegisterForm .line {
+    display: inline-block;
+}
+
+.RegisterForm {
+    width: 40%;
+    height: auto;
+    margin: 0;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.RegisterContainer{
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; 
+        padding: 1rem 0.5rem;
+      
+}

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import './profile.css';
 import { Box } from "@mui/material";
-import ThumbnailSlider from '../home/MostSale'
+import ThumbnailSlider from '../../home/MostSale'
 
 export default function profile() {
 
